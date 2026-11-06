@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Controle parental · YALog Family</title>
+<style>
+body{font:16px system-ui;background:#0b1020;color:#eaf0f7;margin:auto;max-width:750px;padding:24px}
+h1,h2{line-height:1.2} a{color:#74dce7} section,article{background:#121c32;border:1px solid #2a586a;border-radius:12px;margin:16px 0;padding:16px}
+label{display:block;margin-bottom:6px}input,button{font:inherit;padding:.65rem;border-radius:7px;margin:4px 6px 4px 0}input{max-width:90%;background:#0b1020;color:#fff;border:1px solid #688190}button{background:#fb923c;color:#141a24;border:0;font-weight:700;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere}small{color:#a7c1d1} [hidden]{display:none!important}
+</style>
+<h1>YALog Family</h1>
+<p>Controle parental · Android</p>
+<p role="status" id="status"></p>
+<section id="login" hidden>
+  <h2>Acesso do responsável</h2>
+  <form id="login-form">
+    <label for="username">Usuário</label>
+    <input id="username" autocomplete="username" maxlength="40" required>
+    <label for="password">Senha</label>
+    <input id="password" type="password" autocomplete="current-password" required>
+    <button>Entrar</button>
+  </form>
+  <details>
+    <summary>Criar conta ou recuperar acesso</summary>
+    <form id="account-form">
+      <label for="operation">Operação</label>
+      <select id="operation"><option value="register">Criar conta</option><option value="recover">Recuperar acesso</option></select>
+      <label for="account-user">Usuário</label>
+      <input id="account-user" autocomplete="username" maxlength="40" required>
+      <label for="account-password">Nova senha</label>
+      <input id="account-password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+      <label for="account-code">Código de cadastro ou recuperação</label>
+      <input id="account-code" type="password" autocomplete="off" required>
+      <button>Confirmar</button>
+    </form>
+    <pre id="recovery" role="status"></pre>
+  </details>
+</section>
+<div id="parent" hidden>
+  <button id="refresh">Atualizar painel</button><button id="logout">Sair</button>
+  <section>
+    <h2>Vincular aparelho</h2>
+    <form id="invite-form">
+      <label for="label">Apelido do aparelho</label>
+      <input id="label" maxlength="80" required>
+      <button>Gerar convite</button>
+    </form>
+    <pre id="invite"></pre>
+  </section>
+  <div id="devices"></div>
+  <section>
+    <details>
+      <summary>Excluir conta e dados da família</summary>
+      <p>Remove a conta, convites, aparelhos vinculados, regras e resumos no servidor.</p>
+      <form id="delete-form">
+        <label for="delete-password">Confirme sua senha</label>
+        <input id="delete-password" type="password" autocomplete="current-password" required>
+        <button>Excluir família</button>
+      </form>
+    </details>
+  </section>
+</div>
+<script src="/controle.js" defer></script>
+</html>

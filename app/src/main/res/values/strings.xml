@@ -1,0 +1,3 @@
+<resources>
+    <string name="app_limits_description">Aplica os limites combinados com o responsável ao detectar qual aplicativo foi aberto. Não lê o conteúdo da tela.</string>
+</resources>

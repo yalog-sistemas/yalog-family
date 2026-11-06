@@ -1,0 +1,10 @@
+{
+  "name": "yalog-family-pilot",
+  "version": "0.4.0",
+  "private": true,
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "start": "node server/server.mjs",
+    "invite": "node server/create-invite.mjs"
+  }
+}

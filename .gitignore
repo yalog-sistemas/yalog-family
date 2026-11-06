@@ -1,0 +1,11 @@
+node_modules/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+.env
+.env.*
+piloto-local/
+*.key
+*.jks
+*.apk
